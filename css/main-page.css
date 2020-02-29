@@ -70,7 +70,7 @@ a:hover {
 }
 
 .banner {
-    height: 850px;
+    min-height: calc(100vh - 87px);
     background-image: url("../images/banner-glowna.jpg");
     background-position: center;
     background-size: cover;
@@ -84,9 +84,11 @@ a:hover {
 
 .banner-content {
     max-width: 900px;
-    border: 6px solid rgba(255,255,255, 0.7);
+    border: 6px solid rgba(255,255,255, 0.7);;
     text-align: center;
     padding: 100px;
+    position: relative;
+    box-sizing: border-box;
 }
 
 .banner-content h1 {
@@ -96,6 +98,18 @@ a:hover {
     color:#60c5ba; 
     padding-bottom: 20px;
 }
+
+.text1, .text2 {
+    animation: text 3s 1;
+}
+
+@keyframes text {
+    0%{
+        color:rgba(255,255,255, 0.7);
+        margin-bottom: -40px;
+    }
+}
+
 
 .btn-scroll-down {
     height: 80px;
@@ -166,9 +180,52 @@ a:hover {
     border-radius: 10px;
 }
 
-.my-offer .col:hover{
-    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+.my-offer .col{
+    height: 300px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.my-offer .col:before{
+    position: absolute;
+    content: '';
+    height: 0;
+    width: 0;
+    border: 1px solid transparent;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+}
+
+.my-offer .col:hover:before{
+    height: 300px;
+    width: 300px;
+    border: 3px solid #EE7785;
+    border-radius: 10px;
+    border-right: none;
+    border-bottom: none;
+    transition: width 0.5s linear 0.5s, height 0.5s linear;
+}
+
+.my-offer .col:after{
+    position: absolute;
+    content: '';
+    height: 0;
+    width: 0;
+    border: 1px solid transparent;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+}
+
+.my-offer .col:hover:after{
+    height: 300px;
+    width: 300px;
+    border: 3px solid #EE7785;
+    border-radius: 10px;
+    border-left: none;
+    border-top: none;
+    transition: width 0.5s linear 0.5s, height 0.5s linear;
 }
 
 
@@ -253,8 +310,12 @@ hr {
     max-width: 250px;
     padding: 0 0 20px 0;
     margin-top: 20px;
-    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
     border-radius: 0;
+}
+
+.articles .col:hover{
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .articles .row {
@@ -404,14 +465,15 @@ h5 {
     .page-header{
         flex-direction: column;
     }
+    .banner{
+        min-height: calc(100vh - 141px);
+    }
+
     .page-menu>.page-menu-list{
         margin-bottom: 30px;
     }
     .social-media-list{
         display: none;
-    }
-    .banner {
-        height: 800px;
     }
     .banner-content {
         padding:50px;
@@ -474,9 +536,6 @@ h5 {
 }
 
 @media (max-width: 630px) {
-    .banner {
-        height: 500px;
-    }
     .banner-content h1 {
         font-size: 2.3em;
     }

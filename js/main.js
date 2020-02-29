@@ -40,23 +40,12 @@ window.addEventListener("resize", function () {
     }
 });
 
-// Scroll to the next div using scroll button
-
-const scrollButton = document.getElementById("btn-scroll-down");
-const myOffer = document.getElementById("my-offer");
-console.log(scrollButton);
-
-scrollButton.addEventListener("click", function (e) {
-    e.preventDefault()
-    myOffer.scrollIntoView({ behavior: 'smooth' })
-});
-
 // Show button to get you back to top of the website
 const topButton = document.getElementById("btn-to-top");
 
 window.onscroll = function () { scrollFunction() };
 function scrollFunction() {
-    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
         topButton.style.display = "block";
     } else {
         topButton.style.display = "none";

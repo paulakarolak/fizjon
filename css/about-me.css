@@ -4,9 +4,139 @@
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
-        flex-direction: column;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
+.my-experience-container li {
+    position: relative;
+    padding-left: 30px;
+    margin-top: 10px;
+    line-height: 1.5em;
+}
+
+.my-experience-container li:before {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border: 3px solid #EE7785;
+    background: #fff;
+    top: 6px;
+    left: 0;
+    border-radius: 50%;
+}
+
+.subbaner-content {
+    height: 150px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.subbaner h1 {
+    color: #60c5ba;
+    font-size: 4em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.subbaner h3 {
+    background-color: lightblue;
+    color: white;
+    font-size: 1.5em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+}
+
+.subbaner h3 span {
+    font-weight: bold;
+}
+
+.subbaner a {
+    text-decoration: none;
+    outline: none;
+}
+.subbaner a:hover {
+    color: rgba(255,255,255, 0.7);
+}
+
+.about-me-subpage .container {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.about-me-subpage {
+    background-color: white;
+}
+
+.my-experience-container {
+    margin-top: 20px;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+}
+.my-experience {
+    padding-left: 30px;
+}
+
+.my-experience p, .my-experience li {
+    font-size: 1.1em;
+    color: rgba(68,68,68, 0.8);
+    line-height: 1.4em;
+}
+
+.my-experience p {
+    padding-top: 25px;
+}
+
+.enhance {
+    font-weight: bold;
+}
+
+.my-image-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+}
+
+.my-image-container h4{
+    color: #444444;
+    text-align: center;
+}
+
+.my-image-container h4 span {
+    color: #444444;
+}
+
+.contact-reference {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.contact-reference a {
+    display: block;
+    background-color: rgb(0, 151, 211);
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: white; 
+    border: 1px solid transparent;
+    font-size: 1.2em;
+}
+
+.contact-reference a:hover {
+    color: #EE7785;
+    background-color: white;
+    font-weight: bold;
+    border: 1px solid #EE7785;
+}

@@ -1,0 +1,128 @@
+a {
+   color: #444444;
+}
+
+.subbaner {
+    background-image: url("../images/contact.jpg");
+    background-position: bottom;
+}
+
+.subbaner h1 {
+    color:rgb(0, 151, 211);
+}
+.subbaner h3 {
+    background-color:#EE7785;
+}
+
+.contact-subpage .container {
+    min-height: 420px;
+}
+
+.contact-area {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.contact-area .row {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1000px;
+}
+
+.form-area {
+    display: flex;
+}
+
+.contact-div {
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+.contact-detail h4 {
+    font-size: 1.2em;
+    text-transform: none;
+    font-weight: normal;
+}
+
+.contact-detail p {
+    font-size: 1em;
+}
+
+.contact-detail-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.contact-icon-div{
+    width: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-detail-div i {
+    font-size: 2em;
+    color:#EE7785;
+}
+
+#contact-form {
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-row {
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.form-row input {
+    font-family: 'Palanquin', sans-serif;
+    width: 100%;
+    padding: 10px;
+    font-size: 0.8em;
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid rgba(68,68,68, 0.6);
+}
+
+.form-message {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-message textarea {
+    font-family: 'Palanquin', sans-serif;
+    color:  rgba(68,68,68, 0.6);
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    font-size: 0.8em;
+    border-radius: 5px;
+    border: 1px solid rgba(68,68,68, 0.6);
+}
+
+.btn-submit {
+    margin-top: 5px;
+    align-self: center;
+    outline: none;
+    background-color: #EE7785;
+    color: white;
+    border: 3px solid transparent;
+    width: 150px;
+    font-size: 1em;
+    font-family: 'Palanquin', sans-serif;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    align-self: flex-end;
+}
+    
+.btn-submit:hover {
+    background-color: white;
+    color: rgb(0, 151, 211);
+    border: 3px solid rgb(0, 151, 211);
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: bold;
+}

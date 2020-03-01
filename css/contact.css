@@ -7,6 +7,10 @@ a {
     background-position: bottom;
 }
 
+.subbaner a {
+    color: white;
+}
+
 .subbaner h1 {
     color:rgb(0, 151, 211);
 }
@@ -80,7 +84,7 @@ a {
     font-family: 'Palanquin', sans-serif;
     width: 100%;
     padding: 10px;
-    font-size: 0.8em;
+    font-size: 1em;
     border-radius: 5px;
     box-shadow: none;
     border: 2px solid rgba(68,68,68, 0.6);
@@ -98,10 +102,11 @@ a {
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
-    font-size: 0.8em;
+    font-size: 1em;
     border-radius: 5px;
     border: 2px solid rgba(68,68,68, 0.6);
     outline: none;
+    height: 179px;
 }
 
 .btn-submit {
@@ -111,12 +116,10 @@ a {
     background-color: #EE7785;
     color: white;
     border: 3px solid transparent;
-    width: 150px;
     font-size: 1em;
     font-family: 'Palanquin', sans-serif;
     border-radius: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 5px 15px;
     align-self: flex-end;
 }
     

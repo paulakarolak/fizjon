@@ -2,6 +2,19 @@
     box-sizing: border-box;
 }
 
+.intro {
+    overflow: hidden;
+}
+
+.entry-div {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 body {
     color: #444444;
     font-family: 'Palanquin', sans-serif;

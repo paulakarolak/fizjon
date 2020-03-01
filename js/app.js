@@ -26,7 +26,6 @@ window.addEventListener('DOMContentLoaded', () => {
     // Hide social media icons on small screen
     const socialMedia = document.getElementById("social-media");
     const header = document.getElementById("page-header");
-    console.log(socialMedia);
     window.addEventListener("load", function () {
         if (window.innerWidth < 400) {
             socialMedia.style.display = "none";
@@ -62,26 +61,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Scroll to the next div using scroll button
     const scrollButton = document.getElementById("btn-scroll-down");
-    const myOffer = document.getElementById("my-offer");
-    console.log(scrollButton);
-
-    scrollButton.addEventListener("click", function (e) {
-        e.preventDefault()
-        myOffer.scrollIntoView({ behavior: 'smooth' })
-    });
-});
-
-// Gallery slider
-$(document).ready(function () {
-
-    $('[data-fancybox]').fancybox({
-        transitionEffect: "slide",
-        buttons: [
-            "zoom",
-            "slideShow",
-            "fullScreen",
-            "thumbs",
-            "close"
-        ],
-    });
+    if (scrollButton) {
+        const myOffer = document.getElementById("my-offer");
+        scrollButton.addEventListener("click", function (e) {
+            e.preventDefault()
+            myOffer.scrollIntoView({ behavior: 'smooth' })
+        });
+    }
 });

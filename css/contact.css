@@ -83,7 +83,8 @@ a {
     font-size: 0.8em;
     border-radius: 5px;
     box-shadow: none;
-    border: 1px solid rgba(68,68,68, 0.6);
+    border: 2px solid rgba(68,68,68, 0.6);
+    outline: none;
 }
 
 .form-message {
@@ -93,13 +94,14 @@ a {
 
 .form-message textarea {
     font-family: 'Palanquin', sans-serif;
-    color:  rgba(68,68,68, 0.6);
+    color:  #444444;
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
     font-size: 0.8em;
     border-radius: 5px;
-    border: 1px solid rgba(68,68,68, 0.6);
+    border: 2px solid rgba(68,68,68, 0.6);
+    outline: none;
 }
 
 .btn-submit {
@@ -125,4 +127,62 @@ a {
     cursor: pointer;
     transition: 0.2s;
     font-weight: bold;
+}
+
+input.valid, textarea.valid{
+    border: 2px solid #60c5ba;
+}
+
+input.invalid, textarea.invalid{
+    border: 2px solid #EE7785;
+}
+
+.error {
+	color: red;	
+}
+
+.ok {
+	color: green;	
+}
+
+.hide {
+    display: none;
+}
+
+.loading.show {
+    margin: 0 auto;
+}
+
+.loading-animation {
+    margin-top: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 4px solid rgba(68,68,68, 0.3);
+    border-right-color: rgba(68,68,68, 0.6);
+    animation: loading-animation 0.6s 0s infinite linear;
+}
+    
+@keyframes loading-animation {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.success {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.fa-check {
+    color: #60c5ba;
+    font-size: 2em;
+}
+
+.success.show, .loading.show {
+    display: block;
 }

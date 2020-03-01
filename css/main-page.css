@@ -509,7 +509,7 @@ h5 {
 
 @media (max-width: 820px) {
     .banner{
-        height: calc(100vh - 87x);
+        height: calc(100vh - 87px);
     }
     .page-header{
         flex-direction: row;

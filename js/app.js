@@ -1,16 +1,18 @@
 window.addEventListener('DOMContentLoaded', () => {
 
     //Hide intro page
-
-    const btnEnter = document.getElementById("btn-enter");
-    const intro = document.querySelector(".entry-div");
     const body = document.querySelector("body");
-    
-    btnEnter.addEventListener("click", function (e) {
-        e.preventDefault()
-        intro.classList.add("slide-out-top");
-        body.classList.remove("intro");
-    });
+
+    if (body.classList.contains("intro")) {
+        const btnEnter = document.getElementById("btn-enter");
+        const intro = document.querySelector(".entry-div");
+
+        btnEnter.addEventListener("click", function (e) {
+            e.preventDefault()
+            intro.classList.add("slide-out-top");
+            body.classList.remove("intro");
+        });
+    }
 
     // Show hidden menu after click on burger
     const burgerNav = document.querySelector(".page-menu-list");

@@ -3,30 +3,27 @@ function setCookie(name, value) {
     document.cookie = name + "=" + (value || "") + "; path=/";
 }
 function getCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
+    let nameEQ = name + "=";
+    let ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
         while (c.charAt(0) == ' ') c = c.substring(1, c.length);
         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
     }
     return null;
 }
-
+//Document ready
 window.addEventListener('DOMContentLoaded', () => {
-
     const intro = document.querySelector(".entry-div");
     const body = document.querySelector("body");
-
-    //Callback cookie
+    //Callback cookie (to disable intro until window is closed and reopened)
     if (intro) {
         if (getCookie("fizjon_intro") == "1") {
             body.classList.remove("intro");
             intro.remove();
         }
     }
-
-    //Hide intro page when going to main page in the same session
+    //Hide intro page on click and when going to main page in the same session
     if (body.classList.contains("intro")) {
         const btnEnter = document.getElementById("btn-enter");
         btnEnter.addEventListener("click", function (e) {
@@ -36,12 +33,10 @@ window.addEventListener('DOMContentLoaded', () => {
             setCookie("fizjon_intro", "1");
         });
     }
-
-    // Show hidden menu after click on burger
+    // Show hidden menu after click on burger on small screens
     const burgerNav = document.querySelector(".page-menu-list");
     const burgerMenu = document.querySelector(".menu-burger");
     const button = document.createElement("BUTTON");
-
     burgerMenu.addEventListener("click", function (e) {
         e.preventDefault()
         if (burgerNav.classList.contains("show")) {
@@ -52,17 +47,14 @@ window.addEventListener('DOMContentLoaded', () => {
             button.classList.add("btn-close");
         }
     });
-
     button.addEventListener("click", function (e) {
         e.preventDefault()
         if (burgerNav.classList.contains("show")) {
             burgerNav.classList.remove("show");
         }
     });
-
     // Hide social media icons on small screen
     const socialMedia = document.getElementById("social-media");
-    const header = document.getElementById("page-header");
     window.addEventListener("load", function () {
         if (window.innerWidth < 400) {
             socialMedia.style.display = "none";
@@ -75,10 +67,8 @@ window.addEventListener('DOMContentLoaded', () => {
             socialMedia.style.display = "flex";
         }
     });
-
     // Show button to get you back to top of the website
     const topButton = document.getElementById("btn-to-top");
-
     window.onscroll = function () { scrollFunction() };
     function scrollFunction() {
         if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
@@ -95,8 +85,7 @@ window.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
         });
     });
-
-    // Scroll to the next div using scroll button
+    // Scroll to the next section using scroll button
     const scrollButton = document.getElementById("btn-scroll-down");
     if (scrollButton) {
         const myOffer = document.getElementById("my-offer");
@@ -105,6 +94,15 @@ window.addEventListener('DOMContentLoaded', () => {
             myOffer.scrollIntoView({ behavior: 'smooth' })
         });
     }
-
-
+    // Reset form elements on reload (firefox saves it)
+    window.addEventListener("load", function () {
+        let inputs = document.querySelectorAll('input[type=text], input[type=tel], input[type=email]');
+        for (let i = 0; i < inputs.length; i++) {
+            document.getElementsByTagName('input')[i].value = "";
+        }
+        let textareas = document.getElementsByTagName('textarea');
+        for (let i = 0; i < textareas.length; i++) {
+            document.getElementsByTagName('textarea')[i].value = "";
+        }
+    })
 });

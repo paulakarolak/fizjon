@@ -108,7 +108,7 @@
                         </div>
                     </div>
                     <!-- Form -->
-                    <form id="contact-form" method="post" action="" novalidate>
+                    <form id="contact-form" method="post" action="" name="contact-form" novalidate>
                         <div class="col contact-div">
                             <div class="form-row">
                                 <label for="name"></label>
@@ -119,7 +119,7 @@
                             <div class="form-row">
                                 <label for="phone"></label>
                                 <input type="tel" id="phone" name="phone" value="" placeholder="Numer telefonu" required
-                                    pattern="(?<!\w)(\(?(\+|00)?\d{2}\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)">
+                                    pattern="(?:\(?\+?48)?(?:[-\.\(\)\s]*(\d)){9}\)?">
                                 <span class="comunicate hide">Nieprawidłowy numer telefonu</span>
                             </div>
                             <div class="form-row">
@@ -179,6 +179,5 @@
     <script src="./js/jquery.js"></script>
     <script src="./js/app.js"></script>
 </body>
-
 
 </html>

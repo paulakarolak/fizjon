@@ -1,6 +1,4 @@
-//JQuery
 $(document).ready(function () {
-
     // Gallery slider
     $('[data-fancybox]').fancybox({
         transitionEffect: "slide",
@@ -12,12 +10,10 @@ $(document).ready(function () {
             "close"
         ],
     });
-
-    // Form name validator
+    // Form validator
     if ($('#contact-form')) {
         $('form input, form textarea').on('keyup', function () {
             var element = $(this);
-            // var name_length = input.val().length;
             if (element[0].checkValidity()) {
                 element.removeClass("invalid").addClass("valid");
                 element.next('.comunicate').addClass("ok").removeClass("error").addClass("hide");
@@ -47,5 +43,4 @@ $(document).ready(function () {
             }
         });
     }
-
 });

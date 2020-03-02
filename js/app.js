@@ -33,6 +33,40 @@ window.addEventListener('DOMContentLoaded', () => {
             setCookie("fizjon_intro", "1");
         });
     }
+    //Set cookie for info about cookies
+    function setCookie2(name,value,days) {
+        let expires = "";
+        if (days) {
+            let date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    }
+    function getCookie2(name) {
+        let nameEQ = name + "=";
+        let ca = document.cookie.split(';');
+        for(let i=0;i < ca.length;i++) {
+            let c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+    //Hide cookies when user hit agree button
+    const btnAgree=document.getElementById("btn-cookie");
+    const cookieAlert = document.getElementById("cookie-alert");
+    btnAgree.addEventListener("click", function(e) {
+        e.preventDefault();
+        setCookie2("fizjon-cookie", "1", 14);
+        cookieAlert.classList.add("hide");
+    });
+     //Callback cookie to disable cookie alert
+     if (cookieAlert) {
+        if (getCookie2("fizjon-cookie") == "1") {
+            cookieAlert.remove();
+        }
+    }
     // Show hidden menu after click on burger on small screens
     const burgerNav = document.querySelector(".page-menu-list");
     const burgerMenu = document.querySelector(".menu-burger");

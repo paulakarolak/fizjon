@@ -58,12 +58,12 @@ window.addEventListener('DOMContentLoaded', () => {
     const cookieAlert = document.getElementById("cookie-alert");
     btnAgree.addEventListener("click", function(e) {
         e.preventDefault();
-        setCookie2("fizjon-cookie", "1", 14);
+        setCookie2("fizjon-cookie", "testcookie", 14);
         cookieAlert.classList.add("hide");
     });
      //Callback cookie to disable cookie alert
      if (cookieAlert) {
-        if (getCookie2("fizjon-cookie") == "1") {
+        if (getCookie2("fizjon-cookie") == "testcookie") {
             cookieAlert.remove();
         }
     }

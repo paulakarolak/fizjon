@@ -1,0 +1,29 @@
+.subbaner {
+    background-image: url("../images/cookies1.jpg");
+    background-position: center;
+}
+
+.subbaner h1 {
+    color: white;
+}
+
+.privacy-subpage h2 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.policy h3 {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.policy p {
+    font-size: 1.1em;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.policy {
+    margin-bottom: 50px;
+}

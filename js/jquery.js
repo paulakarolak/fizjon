@@ -1,4 +1,26 @@
 $(document).ready(function () {
+    // Stick header to top when scrolling
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 1) {
+            $('#page-header').addClass("sticky");
+        }
+        else {
+            $('#page-header').removeClass("sticky");
+        }
+    });
+    // Scroll to the next section using scroll button
+    let headerHeight = $("#page-header").height();
+    $("#btn-scroll-down").click(function () {
+        if ($('#page-header').hasClass("sticky")) {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#my-offer").offset().top - headerHeight + 2
+            }, 1000);
+        } else {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#my-offer").offset().top - headerHeight * 2 + 2
+            }, 1000);
+        }
+    });
     // Gallery slider
     $('[data-fancybox]').fancybox({
         transitionEffect: "slide",
@@ -32,10 +54,10 @@ $(document).ready(function () {
                 event.preventDefault();
                 $('.btn-submit').addClass("hide");
                 $('.loading').addClass("show").removeClass("hide");
-                setTimeout(function() {
+                setTimeout(function () {
                     $('.loading').removeClass("show").addClass("hide");
                     $('.success').toggleClass("show");
-                   }, 2000)
+                }, 2000)
             }
             else {
                 event.preventDefault();

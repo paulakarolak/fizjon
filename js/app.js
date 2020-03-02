@@ -85,15 +85,6 @@ window.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
         });
     });
-    // Scroll to the next section using scroll button
-    const scrollButton = document.getElementById("btn-scroll-down");
-    if (scrollButton) {
-        const myOffer = document.getElementById("my-offer");
-        scrollButton.addEventListener("click", function (e) {
-            e.preventDefault()
-            myOffer.scrollIntoView({ behavior: 'smooth' })
-        });
-    }
     // Reset form elements on reload (firefox saves it)
     window.addEventListener("load", function () {
         let inputs = document.querySelectorAll('input[type=text], input[type=tel], input[type=email]');

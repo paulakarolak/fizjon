@@ -30,10 +30,18 @@ header, section, footer {
 }
 
 .page-header {
-    height: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 199;
+    background-color: rgba(255,255,255);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2)
 }
 
 .page-menu {
@@ -197,6 +205,7 @@ a:hover {
     height: 300px;
     margin-bottom: 5px;
     position: relative;
+    margin-bottom: 20px;
 }
 
 .my-offer .col:before{
@@ -523,7 +532,7 @@ h5 {
         flex-grow: 100%;
         padding-top: 17px;
         transition: 1s;
-        background-color: rgba(255,255,255, 0.7);
+        background-color: rgba(255,255,255, 0.9);
     }
     .page-menu>.page-menu-list a {
         display: flex;

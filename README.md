@@ -1,3 +1,3 @@
 # fizjon
-https://www.fizjon.com/ home page for physiotherapist
+home page for physiotherapist
 
